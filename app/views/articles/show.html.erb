@@ -1,0 +1,39 @@
+<h1></h1>
+<div class="card cardFormat">
+  <div class="card-body">
+    <%= link_to 'Back', articles_path %>
+    <% if user_signed_in? %>
+      | <%= link_to 'Edit', edit_article_path(@article) %> 
+    <% end %>
+
+    <p class="card-text createdAt"><small class="text-muted"><%= @article.created_at.strftime("%b %d at %l:%M %p") %></small></p>
+      <h5 class="card-title"><%= @article.title %></h5>
+    <p class="card-text blogContent"><%= @article.text %></p>
+  </div>
+  <div class="card-img-bottom">
+    <%= image_tag("blog.jpg") %>
+    Comments
+    <hr>
+    <%= render @article.comments %>
+    <% if user_signed_in? %>
+      <hr>
+      <h2>Add a comment:</h2>
+      <%= form_for([@article, @article.comments.build]) do |f| %>
+      <p>
+        <%= f.label :commenter %><br>
+        <%= f.text_field :commenter %>
+      </p>
+      <p>
+        <%= f.label :body %><br>
+        <%= f.text_area :body %>
+      </p>
+      <p>
+        <%= f.submit %>
+      </p>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+
+
+

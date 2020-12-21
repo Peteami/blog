@@ -1,0 +1,12 @@
+<div id="mainContainer">
+  <h1 class="titlePink">The Blog!</h1>
+  <p class="subTitle">
+    What are you going to write about today?
+  </p>
+  <%= image_tag("blog3.jpg") %>
+  <br>
+  <div class="beginButtonDiv">
+    <%= link_to "<button class='blogButton'>BEGIN</button>".html_safe, controller: 'articles', :id=>"open-contacts-dialog-btn", :class=>"inbox-sf-add-btn tip" %>
+  </div>
+</div>
+

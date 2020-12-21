@@ -1,0 +1,21 @@
+<nav class="navbar navbar-expand-lg navbar-inverse fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to image_tag('logoxsm.png').html_safe, root_path %>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <%= render 'layouts/navigation_links' %>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
