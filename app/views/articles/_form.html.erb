@@ -18,11 +18,11 @@
       <%= link_to 'Back', articles_path %>
       <p>
         <%= f.label :title %><br>
-        <%= f.text_field :title %>
+        <%= f.text_field :title, class: 'titleInput' %>
       </p>
       <p>
         <%= f.label :content %><br>
-        <%= f.text_area :text %>
+        <%= f.text_area :text, class: 'contentInput' %>
       </p>
     </div>  
     <p>

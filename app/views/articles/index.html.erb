@@ -5,15 +5,15 @@
       <div class="card-body">
         <p class="card-text createdAt"><small class="text-muted"><%= article.created_at.strftime("%b %d at %l:%M %p") %></small></p>
           <h5 class="card-title"><%= article.title %></h5>
-        <p class="card-text blogContent"><%= article.text %></p>
+        <p class="card-text blogContent"><%= article.text[0, 200] %>...</p>
       </div>
       <div class="card-img-bottom">
         <%= image_tag("blog.jpg") %>
         <div class="cardButtons">
-          <%= link_to "<button class='btn btn-primary btn-lg'>SHOW</button>".html_safe, article_path(article), :id=>"open-contacts-dialog-btn", :class=>"inbox-sf-add-btn tip" %>
+          <%= link_to "<button class='btn btn-primary btn-lg'>READ MORE</button>".html_safe, article_path(article), :id=>"open-contacts-dialog-btn", :class=>"inbox-sf-add-btn tip" %>
           <% if user_signed_in? %>
             <%= link_to "<button class='btn btn-warning btn-lg'>EDIT</button>".html_safe, edit_article_path(article), :id=>"open-contacts-dialog-btn", :class=>"inbox-sf-add-btn tip" %>
-            <%= link_to "<button class='btn btn-danger btn-lg'>DESTROY</button>".html_safe, article_path(article),
+            <%= link_to "<button class='btn btn-danger btn-lg'>DELETE</button>".html_safe, article_path(article),
               method: :delete,
               data: { confirm: 'Are you sure?' }, :id=>"open-contacts-dialog-btn", :class=>"inbox-sf-add-btn tip" %>
           <% end %>
